@@ -1,0 +1,37 @@
+class BookInStock
+  
+  def initialize(isbn,price)
+    unless isbn.size>0 
+      raise ArgumentError.new("Error1: Empty ISBN String")
+    end
+    
+    unless price>0
+      raise ArgumentError.new("Error2: Price Can't be negative or zero")
+    end
+  @isbn1=isbn
+  @price1=price 
+  end
+  
+  # getter method
+  def get_price
+    @price1
+  end
+  
+  def get_ISBN
+    @isbn1
+  end
+
+  # setter method
+  def set_price(str)
+    @price1 = str
+  end 
+  
+  def set_ISBN(str)
+    @isbn1 = str
+  end 
+  
+  def price_as_string
+    answer = sprintf('%.2f', @price1)
+    return "$"+answer
+  end
+end
